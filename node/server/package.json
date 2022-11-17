@@ -8,7 +8,9 @@
     "start": "node dist/main.js",
     "build": "tsc",
     "tsc": "tsc",
-    "generate": "prisma generate",
+    "generate": "npm-run-all --parallel generate:railway generate:render",
+    "generate:railway": "prisma generate --schema prisma/railway.prisma",
+    "generate:render": "prisma generate --schema prisma/render.prisma",
     "db:push": "prisma db push",
     "postinstall": "npm run generate",
     "admin": "clear && ts-node src/admin.ts"
