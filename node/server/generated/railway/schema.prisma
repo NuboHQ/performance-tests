@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/railway"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("RAILWAY_DATABASE_URL")
+}
+
+model City {
+  id         Int    @id @default(autoincrement())
+  city       String
+  city_ascii String
+  lat        Float
+  lng        Float
+  country    String
+  iso2       String
+  iso3       String
+  admin_name String
+  capital    String
+  population Int?
+
+  @@map("cities")
+}
