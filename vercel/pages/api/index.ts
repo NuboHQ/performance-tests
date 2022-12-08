@@ -1,16 +1,10 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
-type Data = {
-  message: string;
+export default (req: NextRequest) => {
+  return NextResponse.json({
+    name: 'Hello from Vercel Edge',
+  });
 };
-
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
-) {
-  res.status(200).json({ message: 'Hello from Vercel' });
-}
 
 export const config = {
   runtime: 'experimental-edge',
