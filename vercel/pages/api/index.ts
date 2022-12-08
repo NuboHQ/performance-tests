@@ -11,3 +11,7 @@ export default function handler(
 ) {
   res.status(200).json({ message: 'Hello from Vercel' });
 }
+
+export const config = {
+  runtime: 'experimental-edge',
+};
