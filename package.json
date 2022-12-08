@@ -1,0 +1,24 @@
+{
+  "name": "performance-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "k6 run --vus 10 --duration 10s test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NuboHQ/performance-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NuboHQ/performance-tests/issues"
+  },
+  "homepage": "https://github.com/NuboHQ/performance-tests#readme",
+  "devDependencies": {
+    "@types/k6": "^0.41.0",
+    "k6": "^0.0.0"
+  }
+}

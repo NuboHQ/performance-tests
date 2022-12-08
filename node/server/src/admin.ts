@@ -3,9 +3,9 @@ import { City, prismaRailway, prismaRender } from './prisma';
 import { chunk } from 'lodash';
 import { sequence } from './sequence';
 
-const prisma = prismaRender;
+const prisma = prismaRailway;
 
-const max = 10000;
+const max = 40000;
 const chunkSize = 500;
 const delay = 500;
 
@@ -19,6 +19,11 @@ const addCities = async (cities: City[], info: any) => {
 };
 
 (async () => {
+  // await prisma.city.deleteMany();
+  const citiess = await prisma.city.findMany();
+  console.log(citiess.length);
+  return;
+
   const citiesString = readFileSync('../../cities.json', 'utf-8');
   const cities = JSON.parse(citiesString).slice(0, max) as City[];
   const cityChunks = chunk(cities, chunkSize);
