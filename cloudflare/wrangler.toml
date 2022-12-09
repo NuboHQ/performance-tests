@@ -1,3 +1,8 @@
 name = "cloudflare"
 main = "src/index.ts"
 compatibility_date = "2022-12-08"
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "items"
+database_id = "94c1d881-1987-4b6f-b0ac-0ba42d52b1f3"
