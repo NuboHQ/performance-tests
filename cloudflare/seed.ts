@@ -1,4 +1,4 @@
-const MAX = 1;
+const MAX = 100000;
 let sql = 'DELETE FROM Items;';
 
 for (let i = 1; i < MAX + 1; i++) {

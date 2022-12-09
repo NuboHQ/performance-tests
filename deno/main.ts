@@ -7,19 +7,19 @@ const port = Number(Deno.env.get('PORT')) || 5000;
 const app = new Application();
 
 // ----------------------------------------------------------------------
-// console.log('INSERT START');
-// const MIN = 1;
-// const TOTAL = 1;
-// const newItems = [];
+console.log('INSERT START');
+const MIN = 1;
+const TOTAL = 1;
+const newItems = [];
 
-// await sql`DELETE FROM items`;
+await sql`DELETE FROM items`;
 
-// for (let i = MIN; i < TOTAL + 1; i++) {
-//   newItems.push({ id: i, message: `Test message ${i}` });
-// }
+for (let i = MIN; i < TOTAL + 1; i++) {
+  newItems.push({ id: i, message: `Test message ${i}` });
+}
 
-// await sql`insert into items ${sql(newItems, 'id', 'message')}`;
-// console.log('INSERT DONE');
+await sql`insert into items ${sql(newItems, 'id', 'message')}`;
+console.log('INSERT DONE');
 // ----------------------------------------------------------------------
 
 // {

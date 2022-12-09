@@ -1,0 +1,16 @@
+{
+  "name": "nubo",
+  "version": "0.0.1-alpha",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "generate": "prisma generate --data-proxy",
+    "postinstall": "bun run generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.7.1"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "prisma": "^4.7.1"
+  }
+}
