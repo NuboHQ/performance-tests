@@ -40,6 +40,24 @@ import type { Item } from './prisma';
     });
   });
 
+  app.get('/add-items/:min/:max/:offset', async (req, res) => {
+    const OFFSET = parseInt(req.params.offset);
+    const MIN = parseInt(req.params.min) + OFFSET;
+    const TOTAL = parseInt(req.params.max) + OFFSET;
+    const items: Item[] = [];
+
+    for (let i = MIN; i < TOTAL + 1; i++) {
+      items.push({ id: i as any, message: `Test message ${i}` });
+    }
+
+    await prisma.items.createMany({ data: items });
+
+    res.json({
+      platform: 'nubo',
+      total: items.length,
+    });
+  });
+
   app.listen(port, () => {
     console.log(`http://localhost:${port}`);
   });
