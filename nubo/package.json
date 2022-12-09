@@ -1,0 +1,11 @@
+{
+  "name": "nubo",
+  "version": "0.0.1-alpha",
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}
